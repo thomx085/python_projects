@@ -24,7 +24,7 @@ class flight_scraper():
         #setting the email configuration
         self.login = ('my_email', 'passkey')
         self.from_email = 'my_email'
-        self.to_list = ['my_email', 'martis_email', 'elliots_email']
+        self.to_list = ['my_email', 'email1', 'email2']
         self.subject = 'Todays top 10 Cheapest Flights to Pittsburgh'
 
     def scrape_and_send(self):   
