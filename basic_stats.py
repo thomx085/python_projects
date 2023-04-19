@@ -10,7 +10,7 @@ import numpy as np
 import toleranceinterval as ti
 
 #defining the file
-file = r'C:\Users\Tanner\Downloads\cf_ANLT5010_DataFiles\cf_ANLT5010_DataFiles\cf_ANLT5010_W1_WaitTimes.csv'
+file = r'nba.csv'
 
 #reading in the csv
 df = pd.read_csv(file, header = None)
