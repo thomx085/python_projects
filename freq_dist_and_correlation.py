@@ -9,17 +9,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-file = r'C:\Users\Tanner\Downloads\cf_ANLT5010_DataFiles\cf_ANLT5010_DataFiles\cf_ANLT5010_W2_InvoiceDayAndAmount.csv'
+file = r'nhl.csv'
 
 df = pd.read_csv(file)
 
-df_list = list(df['Days until Invoice Paid'])
+df_list = list(df['points'])
 
 #setting the class_length
 class_length = 2
 
 #getting the range
-class_range = max(df['Days until Invoice Paid']) - min(df['Days until Invoice Paid'])
+class_range = max(df['points']) - min(df['points'])
 
 #number of classes
 class_number = round(class_range/class_length, 0)
@@ -67,15 +67,15 @@ bin_numbers = [1,2,3,4,5,6,7]
 plt.bar(bin_numbers, class_count)
 plt.ylabel('Count')
 plt.xlabel('Bin Number')
-plt.title('Days Until Patient Paid Distribution')
+plt.title('point distribution')
 plt.show()
 
 
 #starting to calculate the skewness of payment days
-df_skew = round(df['Days until Invoice Paid'].skew(), 3)
-df_kurtosis = round(df['Days until Invoice Paid'].kurtosis(), 3)
-print('The skew of the days until Invoice Paid:', df_skew)
-print('The kurtosis of the days until Invoice Paid:', df_kurtosis)
+df_skew = round(df['points'].skew(), 3)
+df_kurtosis = round(df['points'].kurtosis(), 3)
+print('The skew of points across the season', df_skew)
+print('The skew of points across the season', df_kurtosis)
 
 #calculating the correlation
 df_corr = df.corr(method = 'pearson')
